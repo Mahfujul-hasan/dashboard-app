@@ -29,6 +29,7 @@ export default function Sidebar({ onClose }) {
       label: "Tasks",
       href: "/dashboard/tasks/",
       icon: <FaTasks size={20} />,
+      value:12
     },
     {
       label: "Calendar",
@@ -81,14 +82,20 @@ export default function Sidebar({ onClose }) {
           {item.icon}
         </span>
 
-        {/* Label */}
-        <span
-          className={`text-sm sm:text-base ${
-            isActive ? "text-black font-medium" : "text-gray-400"
-          }`}
-        >
-          {item.label}
-        </span>
+        <div className="flex justify-between items-center w-full pr-5">
+          {/* Label */}
+          <span
+            className={`text-sm sm:text-base ${
+              isActive ? "text-black font-medium" : "text-gray-400"
+            }`}
+          >
+            {item.label}
+          </span>
+          {
+            item.value&&<span className="bg-green-700 text-white px-2 text-base rounded-lg">{item.value}+</span>
+          }
+          
+        </div>
       </Link>
     );
   };
