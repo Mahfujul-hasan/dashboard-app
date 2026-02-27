@@ -14,6 +14,11 @@ import AppDownload from "./AppDownload";
 export default function Sidebar({ onClose }) {
   const location = useLocation();
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
+
   const menuItems = [
     {
       label: "Dashboard",
@@ -52,11 +57,6 @@ export default function Sidebar({ onClose }) {
       label: "Support",
       href: "/dashboard/support",
       icon: <PiLifebuoyLight size={20} />,
-    },
-    {
-      label: "Logout",
-      href: "/",
-      icon: <IoLogOutOutline size={20} />,
     },
   ];
 
@@ -127,6 +127,19 @@ export default function Sidebar({ onClose }) {
             {generalItems.map((item, index) => (
               <NavItem key={index} item={item} index={index} />
             ))}
+
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-3 py-3 rounded-2xl w-full hover:bg-gray-100 transition-colors duration-150"
+            >
+              <div className="h-8 w-1.5 rounded-r-full shrink-0 bg-transparent" />
+
+              <span className="text-gray-400">
+                <IoLogOutOutline size={20} />
+              </span>
+
+              <span className="text-sm sm:text-base text-gray-400">Logout</span>
+            </button>
           </nav>
         </div>
       </div>

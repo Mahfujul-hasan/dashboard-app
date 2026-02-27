@@ -6,7 +6,25 @@ import {
   ResponsiveContainer,
   Cell,
   LabelList,
+  Tooltip,
 } from "recharts";
+
+// --- Move CustomTooltip outside of component ---
+const CustomTooltip = ({ active, payload, growth }) => {
+  if (active && payload && payload.length) {
+    const { views, isHighest, isLowest } = payload[0].payload;
+    return (
+      <div className="bg-white shadow-md p-2 rounded-md border border-gray-200 text-sm">
+        <p className="font-semibold text-gray-700">Views: {views}</p>
+        {isHighest && growth && (
+          <p className="text-green-600 font-semibold">Growth: {growth}%</p>
+        )}
+        {isLowest && <p className="text-red-500 font-semibold">Lowest</p>}
+      </div>
+    );
+  }
+  return null;
+};
 
 const ProjectAnalyticsChart = () => {
   const [data, setData] = useState([]);
@@ -44,7 +62,7 @@ const ProjectAnalyticsChart = () => {
   }, []);
 
   return (
-    <div className="bg-white p-3 sm:p-4 rounded-2xl w-full shadow-sm h-full min-h-[200px]">
+    <div className="bg-white p-3 sm:p-4 rounded-2xl w-full shadow-sm h-full min-h-50">
       <h2 className="text-base sm:text-lg font-semibold text-gray-700 mb-1">
         Project Analytics
       </h2>
@@ -53,7 +71,7 @@ const ProjectAnalyticsChart = () => {
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
-            margin={{ top: 25, right: 8, left: -10, bottom: 5 }}
+            margin={{ top: 25, right: 0, left: 0, bottom: 15 }}
           >
             <defs>
               <pattern
@@ -74,7 +92,19 @@ const ProjectAnalyticsChart = () => {
               tick={{ fill: "#9CA3AF", fontSize: 12 }}
             />
 
-            <Bar dataKey="views" radius={[20, 20, 20, 20]}>
+            {/* Pass tooltip component reference and growth as prop */}
+            <Tooltip
+              content={(props) => <CustomTooltip {...props} growth={growth} />}
+              cursor={{ fill: "transparent" }}
+            />
+
+            <Bar
+              dataKey="views"
+              radius={[20, 20, 20, 20]}
+              isAnimationActive={true}
+              animationDuration={800}
+              animationEasing="ease-out"
+            >
               {data.map((entry, index) => {
                 let fillColor = "url(#stripedPattern)";
                 if (entry.isHighest) fillColor = "#064E3B";

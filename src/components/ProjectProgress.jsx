@@ -145,7 +145,7 @@ const ProjectProgress = () => {
       </div>
 
       {/* Legend */}
-      <div className="flex justify-center gap-6 mt-4">
+      <div className="flex justify-center gap-4 mt-4">
         <LegendItem color="#166534" label="Completed" />
         <LegendItem color="#4ADE80" label="In Progress" />
         <LegendItem isHatch label="Pending" />

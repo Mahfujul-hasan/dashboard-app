@@ -33,7 +33,7 @@ const TimeTracker = () => {
   };
 
   return (
-    <div className="rounded-2xl sm:rounded-3xl w-full h-full p-3 sm:p-4 text-white bg-[url('/timerBg.png')] bg-cover bg-center overflow-hidden min-h-[130px]">
+    <div className="rounded-2xl sm:rounded-3xl w-full h-full p-3 sm:p-4 text-white bg-[url('/timerBg.png')] bg-cover bg-center overflow-hidden min-h-32.5">
       <div className="space-y-2 sm:space-y-3">
         <h2 className="text-xs sm:text-sm font-bold">Time Tracker</h2>
 
