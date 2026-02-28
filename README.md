@@ -1,16 +1,63 @@
-# React + Vite
+# Dozeno – Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dozeno is a modern and responsive dashboard web application.  
+It demonstrates clean UI design, reusable components, smooth animations, and data visualization.
 
-Currently, two official plugins are available:
+**Live Demo:**  
+https://dashboard-app-zeta-ebon.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Dozeno is a dashboard-based web application that includes:
 
-## Expanding the ESLint configuration
+- User statistics overview
+- Revenue & growth analytics
+- Project analytics chart
+- Product listing section
+- Project progress tracking
+- Reminder & meeting section
+- Time tracker
+- Responsive sidebar navigation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The application focuses on:
+- Clean layout structure
+- Modern UI/UX principles
+- Component reusability
+- Smooth animation effects
+- Fully responsive design
+
+---
+
+## Tech Stack
+
+### Frontend
+- React 19
+- React Router 7
+- Tailwind CSS 4
+- Motion (for animations)
+
+### Data Visualization
+- Recharts
+- @nivo/pie
+
+### Icons
+- Lucide React
+- React Icons
+
+### HTTP Client
+- Axios
+
+### Deployment
+- Vercel
+
+---
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally:
+
+- git clone <Repository link>
+- Navigate to the project
+- npm install
+- npm run dev
