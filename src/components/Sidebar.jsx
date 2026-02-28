@@ -27,23 +27,23 @@ export default function Sidebar({ onClose }) {
     },
     {
       label: "Tasks",
-      href: "/dashboard/tasks/",
+      href: "/dashboard/tasks",
       icon: <FaTasks size={20} />,
       value:12
     },
     {
       label: "Calendar",
-      href: "/dashboard/calendar/",
+      href: "/dashboard/calendar",
       icon: <BsCalendar4Event size={20} />,
     },
     {
       label: "Analytics",
-      href: "/dashboard/analytics/",
+      href: "/dashboard/analytics",
       icon: <IoBarChartOutline size={20} />,
     },
     {
       label: "Team",
-      href: "/dashboard/team/",
+      href: "/dashboard/team",
       icon: <BsPeople size={20} />,
     },
   ];
